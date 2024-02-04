@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<OfflineAlgo>
+	<PPAlgo name="BigApertureAlgo"  multi_instance="1" instance_max="10" switcher="1" />
+	<PPAlgo name="fairlight" multi_instance="1" instance_max="10" switcher="0" />
+	<PPAlgo name="filterAlgo" multi_instance="0" instance_max="1" switcher="1" />
+	<PPAlgo name="FNFaceDetect" multi_instance="1" instance_max="10" switcher="0" />
+	<PPAlgo name="panoramaBeauty" multi_instance="1" instance_max="10" switcher="1">
+		<FaceDetectAlgo>1</FaceDetectAlgo> <!-- 0 represent for foto, 1 represent for omron -->
+		<BeautyAlgo>1</BeautyAlgo> <!-- 0 represent for casio, 1 represent for arcsoft -->
+	</PPAlgo>
+</OfflineAlgo>

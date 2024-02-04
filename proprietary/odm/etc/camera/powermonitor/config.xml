@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<PowerMonitorConfig>
+    <PowerMonitor enable="1" skip_num="150" LVL1_bypass_time="120000" LVL1_temp_threshold="44" LVL1_max_fps="22"
+        LVL2_bypass_time="240000" LVL2_temp_threshold="46" LVL2_max_fps="20"
+        temp_node ="/sys/class/thermal/thermal_zone7/temp" />
+    <PowerMonitor FBippenable="1"></PowerMonitor>
+    <PowerMonitor FBFaceRatio="36"></PowerMonitor>
+    <PowerMonitor FBFrameNum="6"></PowerMonitor>
+</PowerMonitorConfig>

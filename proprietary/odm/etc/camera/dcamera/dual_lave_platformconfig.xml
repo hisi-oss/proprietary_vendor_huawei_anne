@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config>
+    <Global>
+        <HDCCalibW>1600</HDCCalibW> <!-- v600字节标定没有存分辨率，需要指定 -->
+        <HDCCalibH>1200</HDCCalibH> 
+    </Global>
+    
+    <AlgorithmPreprocessInfo>
+        <distortionAlg enable="1">
+            <brownEnable>1</brownEnable>        <!-- 0: disable 1: enable -->
+            <bsplineEnable>1</bsplineEnable>    <!-- 0: disable 1: enable -->
+        </distortionAlg>
+        
+        <OTPRectifyEnable>1</OTPRectifyEnable>     <!-- 0: disable 1: enable -->            
+        
+        <selfLearnAlg enable="1">           <!-- 0: disable 1: enable -->
+            <!-- todo -->
+        </selfLearnAlg>
+        
+        <brightnessColorAdjustEnable>1</brightnessColorAdjustEnable>
+        <brightnessGrayAdajustEnable>1</brightnessGrayAdajustEnable>
+        <onlineDistortionEnable>0</onlineDistortionEnable>
+        <multipleOf8Enable>0</multipleOf8Enable>   <!-- 输入图宽高非8字节对齐校正，仅HL手机开启-->
+    </AlgorithmPreprocessInfo>
+    
+    <AlgorithmDCInfo>
+        <portraitSegmentAlg enable="0">     <!-- 0: disable 1: enable -->
+            <modelWidth> 410 </modelWidth>
+            <modelHeight> 410 </modelHeight>
+            <modelPath>/vendor/etc/camera/cnnmodel/dualcamera/DualCamera_BC_PortraitSeg.cambricon</modelPath>
+        </portraitSegmentAlg>
+        
+        <sparseDispAlg enable="1">          <!-- 0: disable 1: enable -->
+            <DCEAlg enable="1">
+                <baseConfig>
+                    <ratio> 2 </ratio>    <!-- {1, 2} output resolution width/ratio-->
+                    <lrcheckEnable> 0 </lrcheckEnable>
+                </baseConfig>
+                <externConfig enable="0">
+                    <lrcheckEnable> 0 </lrcheckEnable>
+                </externConfig>
+            </DCEAlg>
+            <DMAPAlg enable="0">
+                <dmapVersion>2</dmapVersion>     <!--0:v150, 1:v160, 2:v200, 3:v250, ... 15:unknown-->
+                <baseConfig>
+                    <lrcheckEnable> 1 </lrcheckEnable>
+                </baseConfig>
+                <externConfig enable="1">
+                    <lrcheckEnable> 0 </lrcheckEnable>
+                </externConfig>
+            </DMAPAlg>
+            
+            <sparseOptAlg> 
+                <occOptEnable>0</occOptEnable>           <!-- 0: disable 1: enable -->
+                <connectFillEnable>0</connectFillEnable> <!-- 0: disable 1: enable -->
+                <blackFillEnable>0</blackFillEnable>    <!-- 0: disable 1: enable -->
+                <skyOptEnable>0</skyOptEnable>          <!-- 0: disable 1: enable -->
+                <subPixelsEnable>0</subPixelsEnable>    <!-- 0: disable 1: enable -->
+                <portraitMaskOptInterEnable>0</portraitMaskOptInterEnable>    
+                <portraitMaskOptOuterEnable>0</portraitMaskOptOuterEnable>    
+            </sparseOptAlg>
+        </sparseDispAlg>
+        
+        <denseDispAlg>
+            <opticalFlowAlg>
+                <ratio>2</ratio>                  <!-- {1, 2} output resolution width/ratio-->
+                <occEnable>0</occEnable>            <!-- 0: disable 1: enable -->
+                <headOptInterEnable>0</headOptInterEnable>    <!-- 0: disable 1: enable -->
+                <headOptOuterEnable>0</headOptOuterEnable>    <!-- 0: disable 1: enable -->
+            </opticalFlowAlg>
+            
+            <denseOptAlg>
+                <fingerEnable>0</fingerEnable>            <!-- 0: disable 1: enable -->
+                <deburrEnable>0</deburrEnable>            <!-- 0: disable 1: enable -->
+                <portraitPlaneEnable>0</portraitPlaneEnable>    <!-- 0: disable 1: enable -->
+                <cropAdaptEnable>0</cropAdaptEnable>
+            </denseOptAlg>
+        </denseDispAlg>
+    </AlgorithmDCInfo>
+    
+    <AlgorithmRFInfo>
+        <frontFilterEnable>0</frontFilterEnable>        <!-- 0: disable 1: enable -->
+        <edgeFilterEnable>1</edgeFilterEnable>          <!-- 0: disable 1: enable -->
+        <blurEnhanceRatio>1.0</blurEnhanceRatio>                      <!--  [0.5, 2.0] -->
+        <dofEnhanceRatio>1.0</dofEnhanceRatio>                       <!--  [0.5, 5.0] -->
+        <spotTh>220</spotTh>                            <!--  [80, 255] -->
+        <spotBrightnessEnhanceRatio>1.0</spotBrightnessEnhanceRatio>        <!--  [0.5, 5.0] -->
+        <errorSpotOptEnable>0</errorSpotOptEnable>        <!-- dxo open, product close -->
+        <portraitBlurEnhanceRatio>1.0</portraitBlurEnhanceRatio>      <!--  [0.5, 2.0] -->
+        <spotEnhanceEnable>0</spotEnhanceEnable>        <!-- dxo open, product close -->
+
+        <lowLightConnectAreaThRatio>70</lowLightConnectAreaThRatio>
+        <outSideCircleConnectAreaThRatio>20</outSideCircleConnectAreaThRatio>
+        <outSideOtherConnectAreaThRatio>40</outSideOtherConnectAreaThRatio>
+        <srcWeightSwirlAndDiscsRatio>5</srcWeightSwirlAndDiscsRatio>
+        <srcWeightHeartRatio>3</srcWeightHeartRatio>
+        <portraitAutoAdjustFocusPointEnable>1</portraitAutoAdjustFocusPointEnable> <!--人像模式多人场景自动选择对焦人脸-->
+        <noiseUniformEnable>0</noiseUniformEnable> <!--前后景噪声一致性-->
+        <noiseUniformStrength>3</noiseUniformStrength> <!--噪声强度 [0, 10]-->
+        <noiseUniformIsoTh>10</noiseUniformIsoTh> <!--iso阈值/10 [0, 255]-->
+
+    </AlgorithmRFInfo>
+
+    <ExternConfig>
+        <packDispRefMatImg>0</packDispRefMatImg> <!-- 是否存储中间数据结果 dxo open, product close-->
+    </ExternConfig>
+    
+</Config>

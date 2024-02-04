@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<CONFIG_PARA>
+        <ENVLUMA_HIGHLIGHT_THRESHOLD value="80"/>
+        <ENVLUMA_CHANGE_THRESHOLD value="3"/>
+</CONFIG_PARA>

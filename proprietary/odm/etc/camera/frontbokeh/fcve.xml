@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Config>
+    <Global>
+        <platform_flag>0</platform_flag>  <!-- 0: phone, 1: UDP -->
+        <contractAdjust_flag>0</contractAdjust_flag> <!--0:¹Ø±Õ¶Ô±È¶Èµ÷Õû,1: ¿ªÆô¶Ô±È¶Èµ÷Õû -->
+        <colorAdjust_flag>0</colorAdjust_flag><!--0:¹Ø±ÕÑÕÉ«µ÷Õû,1:¿ªÆôÑÕÉ«µ÷Õû -->
+        <lumaAdjust_flag>0</lumaAdjust_flag><!--0:¹Ø±ÕÁÁ¶Èµ÷Õû,1:¿ªÆôÁÁ¶Èµ÷Õû -->
+    </Global>
+    <ColorAdjust>
+        <contrast_param>7</contrast_param>          <!-- [0, 20]   : ¶Ô±È¶È²ÎÊý Ô½´ó ¶Ô±È¶ÈÔöÇ¿Ô½´ó -->
+        <color_adj_ratio>1.1</color_adj_ratio>        <!-- [1.0, 1.6]  : ±¥ºÍ¶È²ÎÊý Ô½´ó ±¥ºÍ¶ÈÔ½¸ß -->
+    </ColorAdjust>
+    <LumaAdjust>
+        <luma_adjust_gain>-1</luma_adjust_gain>      <!-- [-20, 20] -->
+    </LumaAdjust>
+	<BlurEffect>
+	    <smooth_transition>0</smooth_transition>   <!-- smooth transistion in froeground and background boundary, 0: use hard transition; 1: use soft transition-->
+	    <circle_radius>6</circle_radius>   <!-- radius in circle filtering, [1, 10]  -->
+		<group_circle_radius>6</group_circle_radius>   <!-- radius in circle filtering when group, [1, 10]  -->
+		<color_facula>1</color_facula>  <!-- 0:¹Ø±Õcolor facula,1£º¿ªÆôcolor facula  -->
+	</BlurEffect>
+    <FaceCheck>
+        <ratio_to_image>0.1</ratio_to_image> <!-- [0, 1], face, whose size is less than this_ratio * min(image_width, image_height), will be filtered -->
+        <ratio_to_major_face>0.3</ratio_to_major_face> <!-- [0, 1], face, whose size is less than this_ratio * largest_face_size, will be filtered -->
+        <face_recover>0</face_recover><!-- 0:¹Ø±ÕÈËÁ³±£»¤,1£º¿ªÆôÈËÁ³±£»¤ -->
+    </FaceCheck>
+    <HairRefine>
+        <hair_refine>0</hair_refine>   <!-- 0:¹Ø±ÕÍ··¢±£»¤,1£º¿ªÆôÍ··¢±£»¤  -->
+        <hair_area_ratio>1.0</hair_area_ratio>   <!-- [1.0, 1.25]  : area ratioÔ½´ó ¸ÄÉÆÇøÓòÔ½´ó -->
+        <hair_refine_halo>0</hair_refine_halo>   <!-- 0:¹Ø±ÕÍ··¢ºÚÔÎÓÅ»¯,1£º¿ªÆôÍ··¢ºÚÔÎÓÅ»¯  -->
+    </HairRefine>
+    <SkinProtect>
+        <skin_protect>1</skin_protect>   <!-- 0:¹Ø±Õ·ôÉ«±£»¤,1£º¿ªÆô·ôÉ«±£»¤  -->
+    </SkinProtect>
+    <EdgeProtect>
+        <edge_protect>0</edge_protect>   <!-- 0:¹Ø±Õedge_protect,1£º¿ªÆôedge_protect  -->
+    </EdgeProtect>
+    <InPaint>
+        <in_paint>0</in_paint>   <!-- 0:¹Ø±Õin paint,1£º¿ªÆôin paint  -->
+    </InPaint>
+    <ITR>
+        <itr>1</itr>   <!-- [1, 2]:²ÎÊýÔ½´ó£¬ÍâÀ©¸üÉÙ  -->
+    </ITR>
+    <PreviewConfig>
+        <preview_mask_refine>1</preview_mask_refine>   <!-- 0:close mask refine,1: open mask refine  -->
+        <preview_mask_multiface>0</preview_mask_multiface>   <!-- 0:close mask preview_mask_multiface,1: open mask preview_mask_multiface  if 1, must input face contour, or return fail-->
+        <preview_calc_mask_interval>3</preview_calc_mask_interval>   <!-- [0,3], calculate mask interval -->
+    </PreviewConfig>
+	<IPUConfig>
+		<useIPU>0</useIPU>   <!-- 0: Don't use IPU, 1: use IPU  -->
+	</IPUConfig>
+</Config>

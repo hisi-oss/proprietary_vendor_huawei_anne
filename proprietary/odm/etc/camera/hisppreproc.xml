@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Modules>
+	<Module>
+		<ID>1</ID>
+		<Name>PDALGO</Name>
+		<Path>/odm/lib64/libSonyPDLibrary.so</Path>
+		<AdapterPath>/odm/lib64/hwcam/hwcam.imx498.pd.so</AdapterPath>
+		<Switch>1</Switch>
+		<Spec>IMX498</Spec>
+		<Accelerator>1</Accelerator>
+	</Module>
+</Modules>
